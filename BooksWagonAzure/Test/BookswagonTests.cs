@@ -8,7 +8,7 @@ namespace BooksWagonAzure.Test
     public class BookswagonTests : BaseClass
     {
         UserData data = new UserData();
-        [Test, Order(1)]
+        [Test]
         public void BookswagonLogin()
         {
             var login = new LoginPage(driver);
