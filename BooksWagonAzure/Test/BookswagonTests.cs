@@ -13,7 +13,7 @@ namespace BooksWagonAzure.Test
         public void BookswagonLogin()
         {
             var login = new LoginPage(driver);
-            login.AccountLogin(ConfigurationManager.AppSettings["email"], ConfigurationManager.AppSettings["bookspassword"]);
+            login.AccountLogin();
             string title = "Online BookStore India, Buy Books Online, Buy Book Online India - Bookswagon.com";
             Assert.AreEqual(driver.Title, title);
         }
@@ -44,7 +44,7 @@ namespace BooksWagonAzure.Test
             address.Payment();
             string url = "https://www.bookswagon.com/login";
             Assert.AreEqual(driver.Url, url);
-        }
+        } 
 
     }
 }

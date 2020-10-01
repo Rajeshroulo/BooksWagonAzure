@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System;
+using System.Configuration;
 using System.Threading;
 
 namespace Bookswagon.Page
@@ -8,6 +9,9 @@ namespace Bookswagon.Page
     public class LoginPage
     {
         public IWebDriver driver;
+        string email = ConfigurationManager.AppSettings["email"];
+        string password = ConfigurationManager.AppSettings["bookspassword"];
+
         public LoginPage(IWebDriver driver)
         {
             this.driver = driver;
@@ -23,11 +27,11 @@ namespace Bookswagon.Page
         [FindsBy(How = How.Id, Using = "ctl00_phBody_SignIn_btnLogin")]
         public IWebElement loginButton;
         
-        public void AccountLogin(string email, string bookspassword)
+        public void AccountLogin()
         {
-            Thread.Sleep(10000);
+            Thread.Sleep(20000);
             mail.SendKeys(email);
-            bookPassword.SendKeys(bookspassword);
+            bookPassword.SendKeys(password);
             loginButton.Click();
             Thread.Sleep(2000);
         }        
