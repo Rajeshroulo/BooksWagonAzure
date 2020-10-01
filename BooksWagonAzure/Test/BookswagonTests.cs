@@ -1,6 +1,7 @@
 ﻿using Bookswagon.Page;
 using BooksWagonAzure.Base;
 using NUnit.Framework;
+using System;
 using System.Configuration;
 
 namespace BooksWagonAzure.Test
@@ -13,16 +14,17 @@ namespace BooksWagonAzure.Test
         {
             var login = new LoginPage(driver);
             login.AccountLogin(ConfigurationManager.AppSettings["email"], ConfigurationManager.AppSettings["bookspassword"]);
-            Assert.AreEqual("TextBooks", login.TextBooks()); 
+            string title = "Online BookStore India, Buy Books Online, Buy Book Online India - Bookswagon.com";
+            Assert.AreEqual(driver.Title, title);
         }
 
-       [Test, Order(2)]
+        [Test, Order(2)]
         public void SearchBooks()
         {
             var search = new BookSearchPage(driver);
             search.BookSearching();
-            string text = "Bestsellers";
-            Assert.AreEqual(text, search.BookTitle());
+            string title = "Buy Wings of Fire book by Au,Apj Abdul Kalam,Arun Tiwari, 9788173711466 - Bookswagon.com";
+            Assert.AreEqual(driver.Title, title);
         }
 
         [Test, Order(3)]
@@ -40,8 +42,8 @@ namespace BooksWagonAzure.Test
             var address = new AddressPage(driver);
             address.ShippingAddress();
             address.Payment();
-            string expected = "TextBooks";
-            Assert.AreEqual(expected, address.Books());
+            string url = "https://www.bookswagon.com/login";
+            Assert.AreEqual(driver.Url, url);
         }
 
     }

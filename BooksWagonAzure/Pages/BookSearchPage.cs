@@ -22,28 +22,16 @@ namespace Bookswagon.Page
 
         [FindsBy(How = How.Id, Using = "ctl00_TopSearch1_Button1")]
         public IWebElement searchButton;
-        
-        [FindsBy(How = How.XPath, Using = "//a[contains(text(),'Bestsellers')]")]
-        public IWebElement wingsOfFire;
-
+                
         public void BookSearching()
         {
             Thread.Sleep(1000);
             search.SendKeys(ConfigurationManager.AppSettings["BookName"]);
             searchButton.Click();
             Thread.Sleep(3000);
-            IList<IWebElement> books = driver.FindElements(By.XPath("//a[contains(text(),'Wings of Fire')]"));
-            foreach(var book in books)
-            {
-                Console.WriteLine(book.Text);
-            }
-            books[1].Click();
+            IList<IWebElement> books = driver.FindElements(By.XPath("//a[contains(text(),'Wings of Fire')]"));            
+            books[0].Click();
             Thread.Sleep(3000);
-        }
-
-        public string BookTitle()
-        {
-            return wingsOfFire.Text;
-        }
+        }        
     }
 }

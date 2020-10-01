@@ -44,10 +44,7 @@ namespace Bookswagon.Page
 
         [FindsBy(How = How.XPath, Using = "//a[contains(text(),'Logout')]")]
         public IWebElement logout;
-
-        [FindsBy(How = How.XPath, Using = "//a[contains(text(),'TextBooks')]")]
-        public IWebElement books;
-
+        
         public void ShippingAddress()
         {
             Thread.Sleep(3000);
@@ -69,11 +66,6 @@ namespace Bookswagon.Page
             Thread.Sleep(4000);
             logout.Click();
             Thread.Sleep(2000);
-        }
-
-        public string Books()
-        {
-            return books.Text;
-        }
+        }        
     }
 }

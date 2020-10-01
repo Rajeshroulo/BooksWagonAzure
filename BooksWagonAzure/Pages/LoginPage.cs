@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
+using System;
 using System.Threading;
 
 namespace Bookswagon.Page
@@ -21,10 +22,7 @@ namespace Bookswagon.Page
 
         [FindsBy(How = How.Id, Using = "ctl00_phBody_SignIn_btnLogin")]
         public IWebElement loginButton;
-
-        [FindsBy(How = How.XPath, Using = "//a[contains(text(),'TextBooks')]")]
-        public IWebElement textBooks;
-
+        
         public void AccountLogin(string email, string bookspassword)
         {
             Thread.Sleep(10000);
@@ -32,11 +30,6 @@ namespace Bookswagon.Page
             bookPassword.SendKeys(bookspassword);
             loginButton.Click();
             Thread.Sleep(2000);
-        }
-
-        public string TextBooks()
-        {
-            return textBooks.Text;
-        }
+        }        
     }
 }
