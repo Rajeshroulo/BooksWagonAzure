@@ -12,10 +12,7 @@ namespace Bookswagon.Page
             this.driver = driver;
             PageFactory.InitElements(driver, this);
         }
-
-        [FindsBy(How = How.XPath, Using = "//a[contains(text(),'Login')]")]
-        public IWebElement loginOption;
-
+     
         [FindsBy(How = How.Name, Using = "ctl00$phBody$SignIn$txtEmail")]
         public IWebElement mail;
 
@@ -30,9 +27,7 @@ namespace Bookswagon.Page
 
         public void AccountLogin(string email, string bookspassword)
         {
-            loginOption.Click();
-            Thread.Sleep(3000);
-            mail.SendKeys(email);
+           mail.SendKeys(email);
             bookPassword.SendKeys(bookspassword);
             loginButton.Click();
             Thread.Sleep(2000);

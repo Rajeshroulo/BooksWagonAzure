@@ -25,5 +25,14 @@ namespace BooksWagonAzure.Test
             Assert.AreEqual(text, search.BookTitle());
         }
 
+        [Test, Order(3)]
+        public void AddtoCart()
+        {
+            var cart = new MyCartPage(driver);
+            cart.AddToShoppingCart();
+            string mail = "Hi, rajraval017@gmail.com";
+            Assert.AreEqual(mail, cart.MailId());
+        }
+
     }
 }

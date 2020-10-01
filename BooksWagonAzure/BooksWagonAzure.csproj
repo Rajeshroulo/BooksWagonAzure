@@ -84,6 +84,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Pages\BookSearchPage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
+    <Compile Include="Pages\MyCartPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test\BookswagonTests.cs" />
   </ItemGroup>
