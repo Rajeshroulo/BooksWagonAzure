@@ -27,7 +27,8 @@ namespace Bookswagon.Page
 
         public void AccountLogin(string email, string bookspassword)
         {
-           mail.SendKeys(email);
+            Thread.Sleep(5000);
+            mail.SendKeys(email);
             bookPassword.SendKeys(bookspassword);
             loginButton.Click();
             Thread.Sleep(2000);

@@ -32,7 +32,17 @@ namespace BooksWagonAzure.Test
             cart.AddToShoppingCart();
             string mail = "Hi, rajraval017@gmail.com";
             Assert.AreEqual(mail, cart.MailId());
-        } 
+        }
+
+        [Test, Order(5)]
+        public void DeliveryAddress()
+        {
+            var address = new AddressPage(driver);
+            address.ShippingAddress();
+            address.Payment();
+            string expected = "TextBooks";
+            Assert.AreEqual(expected, address.Books());
+        }
 
     }
 }

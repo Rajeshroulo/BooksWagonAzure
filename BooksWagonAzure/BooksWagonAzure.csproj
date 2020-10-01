@@ -82,6 +82,7 @@
   <ItemGroup>
     <Compile Include="Base\BaseClass.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Pages\AddressPage.cs" />
     <Compile Include="Pages\BookSearchPage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\MyCartPage.cs" />
