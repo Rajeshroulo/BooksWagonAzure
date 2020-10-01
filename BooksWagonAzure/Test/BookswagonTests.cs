@@ -16,7 +16,7 @@ namespace BooksWagonAzure.Test
             Assert.AreEqual("TextBooks", login.TextBooks());
         }
 
-        [Test, Order(2)]
+       [Test, Order(2)]
         public void SearchBooks()
         {
             var search = new BookSearchPage(driver);
@@ -32,7 +32,7 @@ namespace BooksWagonAzure.Test
             cart.AddToShoppingCart();
             string mail = "Hi, rajraval017@gmail.com";
             Assert.AreEqual(mail, cart.MailId());
-        }
+        } 
 
     }
 }

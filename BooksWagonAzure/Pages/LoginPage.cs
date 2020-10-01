@@ -12,14 +12,14 @@ namespace Bookswagon.Page
             this.driver = driver;
             PageFactory.InitElements(driver, this);
         }
-     
-        [FindsBy(How = How.Name, Using = "ctl00$phBody$SignIn$txtEmail")]
+
+        [FindsBy(How = How.Id, Using = "ctl00_phBody_SignIn_txtEmail")]
         public IWebElement mail;
 
-        [FindsBy(How = How.Name, Using = "ctl00$phBody$SignIn$txtPassword")]
+        [FindsBy(How = How.Id, Using = "ctl00_phBody_SignIn_txtPassword")]
         public IWebElement bookPassword;
 
-        [FindsBy(How = How.Name, Using = "ctl00$phBody$SignIn$btnLogin")]
+        [FindsBy(How = How.Id, Using = "ctl00_phBody_SignIn_btnLogin")]
         public IWebElement loginButton;
 
         [FindsBy(How = How.XPath, Using = "//a[contains(text(),'TextBooks')]")]
