@@ -13,7 +13,7 @@ namespace BooksWagonAzure.Test
         {
             var login = new LoginPage(driver);
             login.AccountLogin(ConfigurationManager.AppSettings["email"], ConfigurationManager.AppSettings["bookspassword"]);
-            Assert.AreEqual("TextBooks", login.TextBooks());
+            Assert.AreEqual("TextBooks", login.TextBooks()); 
         }
 
        [Test, Order(2)]
@@ -34,7 +34,7 @@ namespace BooksWagonAzure.Test
             Assert.AreEqual(mail, cart.MailId());
         }
 
-        [Test, Order(5)]
+        [Test, Order(4)]
         public void DeliveryAddress()
         {
             var address = new AddressPage(driver);
