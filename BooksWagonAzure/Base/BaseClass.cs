@@ -16,7 +16,7 @@ namespace BooksWagonAzure.Base
             ChromeOptions options = new ChromeOptions();
             options.AddArguments("--disable-notifications", "start-maximized");
             driver = new ChromeDriver(options);
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             driver.Url = ConfigurationManager.AppSettings["URL"];
         }
 
