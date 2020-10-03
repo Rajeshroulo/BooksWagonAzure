@@ -17,7 +17,6 @@ namespace BooksWagonAzure.Base
             options.AddArguments("--disable-notifications", "start-maximized");
             driver = new ChromeDriver(options);
             driver.Url = "https://www.bookswagon.com/login";
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }
 
         [OneTimeTearDown]
